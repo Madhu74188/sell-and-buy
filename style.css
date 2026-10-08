@@ -1,0 +1,64 @@
+body {
+    font-family: Arial;
+    background: #f2f5f9;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+}
+
+.add {
+    background: white;
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    box-shadow: 0 0 8px gray;
+}
+
+input {
+    padding: 10px;
+    margin: 5px;
+}
+
+button {
+    padding: 10px 15px;
+    background: #2878d0;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.search {
+    width: 50%;
+    margin: 20px;
+}
+
+#products {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    width: 220px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 8px #aaa;
+}
+
+.card h2 {
+    color: #2878d0;
+}
+
+.price {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.delete {
+    background: red;
+    margin-left: 5px;
+}

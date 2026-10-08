@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Buy and Sell Products</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>Buy & Sell Used Products</h1>
+
+    <div class="form">
+        <input type="text" id="name" placeholder="Product Name">
+        <input type="text" id="category" placeholder="Category">
+        <input type="number" id="price" placeholder="Price">
+
+        <button onclick="addProduct()">Sell Product</button>
+    </div>
+
+    <input
+        class="search"
+        type="text"
+        id="search"
+        placeholder="Search Products"
+        onkeyup="searchProduct()"
+    >
+
+    <div id="products"></div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

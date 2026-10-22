@@ -1,34 +1,92 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Buy and Sell Products</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopEasy - Online Shopping</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <h1>Buy & Sell Used Products</h1>
+<header class="navbar">
+    <a class="logo" href="#">Shop<span>Easy</span></a>
+    <input type="search" id="search" placeholder="Search for products...">
+    <button id="openCart">🛒 Cart (<span id="cartCount">0</span>)</button>
+</header>
 
-    <div class="form">
-        <input type="text" id="name" placeholder="Product Name">
-        <input type="text" id="category" placeholder="Category">
-        <input type="number" id="price" placeholder="Price">
+<nav class="categories">
+    <button class="category active" data-category="All">All</button>
+    <button class="category" data-category="Mobiles">Mobiles</button>
+    <button class="category" data-category="Electronics">Electronics</button>
+    <button class="category" data-category="Fashion">Fashion</button>
+    <button class="category" data-category="Home">Home</button>
+    <button class="category" data-category="Books">Books</button>
+</nav>
 
-        <button onclick="addProduct()">Sell Product</button>
-    </div>
+<section class="banner">
+    <h1>Big Shopping Days!</h1>
+    <p>Discover amazing products at great prices.</p>
+    <a href="#shop">Shop Now ↓</a>
+</section>
 
-    <input
-        class="search"
-        type="text"
-        id="search"
-        placeholder="Search Products"
-        onkeyup="searchProduct()"
-    >
+<main id="shop">
+    <h2>Explore Products</h2>
+    <p class="subtitle">Find your favourite products and shop online.</p>
+    <div id="products" class="product-grid"></div>
+</main>
 
-    <div id="products"></div>
+<section id="cartSection" class="panel" hidden>
+    <button class="close" id="closeCart">✕</button>
+    <h2>Your Shopping Cart</h2>
+    <div id="cartItems"></div>
+    <h3 id="cartTotal">Total: ₹0</h3>
+    <button id="cartCheckout" class="primary">Proceed to Checkout</button>
+</section>
 
-    <script src="script.js"></script>
+<section id="detailsSection" class="panel" hidden>
+    <button class="close" id="closeDetails">✕</button>
+    <div id="productDetails"></div>
+</section>
 
+<section id="checkoutSection" class="panel" hidden>
+    <button class="close" id="closeCheckout">✕</button>
+    <h2>Delivery & Checkout</h2>
+    <div id="checkoutSummary"></div>
+
+    <form id="checkoutForm">
+        <input id="customerName" placeholder="Full Name" required>
+        <input id="phone" type="tel" inputmode="numeric"
+               pattern="[0-9]{10}" maxlength="10"
+               placeholder="10-digit Mobile Number" required>
+        <textarea id="address" placeholder="Full Delivery Address"
+                  required></textarea>
+        <input id="city" placeholder="City" required>
+        <input id="pincode" inputmode="numeric" pattern="[0-9]{6}"
+               maxlength="6" placeholder="6-digit PIN Code" required>
+
+        <label for="payment">Payment Method</label>
+        <select id="payment" required>
+            <option value="Cash on Delivery">Cash on Delivery (Demo)</option>
+            <option value="Online Payment Demo">Online Payment (Demo)</option>
+        </select>
+
+        <button type="submit" class="primary">Place Order</button>
+    </form>
+    <p class="note">Demo website: no real payment will be collected.</p>
+</section>
+
+<section id="confirmation" class="panel" hidden>
+    <h2>🎉 Order Placed Successfully!</h2>
+    <p id="orderMessage"></p>
+    <button id="continueShopping" class="primary">Continue Shopping</button>
+</section>
+
+<footer>
+    <p>ShopEasy | Your Online Shopping Destination</p>
+    <p>Demo store — no real payment processing.</p>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
